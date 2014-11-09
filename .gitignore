@@ -18,3 +18,7 @@
 .DS_Store
 
 .elasticbeanstalk
+
+# Ignore rvm files
+.ruby-version
+.ruby-gemset
