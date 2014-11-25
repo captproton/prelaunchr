@@ -73,6 +73,9 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dotenv (1.0.2)
+    dotenv-rails (1.0.2)
+      dotenv (= 1.0.2)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -181,6 +184,7 @@ DEPENDENCIES
   activeadmin!
   coffee-rails (~> 3.2.1)
   delayed_job_active_record
+  dotenv-rails
   pg
   pry
   rails (= 3.2.11)
