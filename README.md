@@ -17,6 +17,7 @@ By default, we block more than 2 sign-ups from the same IP address. This was sim
 * Run `bundle exec rake db:create db:schema:load db:seed` to setup the database
 * Type `bundle exec rails s` to startup the Rails Server
   * For convenience we have also bundled a Heroku Procfile to use on production. This uses [Unicorn](https://github.com/defunkt/unicorn) for the web server and runs a [Delayed::Job](https://github.com/collectiveidea/delayed_job) worker for sending email. 
+* If you are using Heroku, run: RAILS_ENV=production bundle exec rake assets:precompile
 
 ## Teardown 
 
