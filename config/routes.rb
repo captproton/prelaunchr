@@ -8,9 +8,10 @@ Prelaunchr::Application.routes.draw do
   root :to => "users#new"
 
   # temporary commenting out for rails 4
+  resources :users, only: [:create]
   get 'users/create', to: 'users#create'
 
-  # get 'refer-a-friend', to: 'users#refer'
+  get 'refer-a-friend', to: 'users#refer'
 
   get 'privacy-policy', to: 'users#policy'
 
