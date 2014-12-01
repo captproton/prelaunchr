@@ -101,4 +101,10 @@ class UsersController < ApplicationController
         end
     end
 
+    # We might not need this
+    # def user_params
+    #   params.require(:user).permit(:email)
+    # end
+    
+
 end
