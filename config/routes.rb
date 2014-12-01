@@ -1,22 +1,29 @@
 Prelaunchr::Application.routes.draw do
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  # ActiveAdmin.routes(self)
+  ActiveAdmin.routes(self)
 
-  # devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   root :to => "users#new"
 
-  # temporary commenting out for rails 4
+<<<<<<< Local Changes
   resources :users, only: [:create]
-  get 'users/create', to: 'users#create'
+=======
+  match 'users/create' => 'users#create'
+>>>>>>> External Changes
 
+<<<<<<< Local Changes
+  # Yes, not quite restful, but that is for another day
   get 'refer-a-friend', to: 'users#refer'
-
   get 'privacy-policy', to: 'users#policy'
+=======
+  match 'refer-a-friend' => 'users#refer'
+
+  match 'privacy-policy' => 'users#policy'
+>>>>>>> External Changes
 
   unless Rails.application.config.consider_all_requests_local
-      match '*not_found', to: 'users#redirect', :format => false
+      get '*not_found', to: 'users#redirect', :format => false
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
