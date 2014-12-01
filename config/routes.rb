@@ -1,16 +1,19 @@
 Prelaunchr::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # ActiveAdmin.routes(self)
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  # devise_for :admin_users, ActiveAdmin::Devise.config
 
   root :to => "users#new"
 
-  match 'users/create' => 'users#create'
+  # temporary commenting out for rails 4
+  resources :users, only: [:create]
+  get 'users/create', to: 'users#create'
 
-  match 'refer-a-friend' => 'users#refer'
+  get 'refer-a-friend', to: 'users#refer'
 
-  match 'privacy-policy' => 'users#policy'
+  get 'privacy-policy', to: 'users#policy'
 
   unless Rails.application.config.consider_all_requests_local
       match '*not_found', to: 'users#redirect', :format => false
