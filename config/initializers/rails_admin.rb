@@ -1,5 +1,9 @@
 RailsAdmin.config do |config|
 
+  ## Temporary no auth 
+config.authenticate_with {}
+config.current_user_method {}
+
   ### Popular gems integration
 
   ## == Devise ==
